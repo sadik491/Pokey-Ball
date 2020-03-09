@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 
+
 public class BallControl : MonoBehaviour
 {
     public Rigidbody rb;
@@ -9,6 +10,7 @@ public class BallControl : MonoBehaviour
     public Vector2 endTouchPos;
 
     public bool triggerEnable;
+   
 
     void Start()
     {
@@ -33,9 +35,12 @@ public class BallControl : MonoBehaviour
                 endTouchPos = Camera.main.ScreenToViewportPoint(touch.position);
             }
 
-            if (touch.phase == TouchPhase.Ended && startTouchPos.y > endTouchPos.y)
+            if (touch.phase == TouchPhase.Ended && startTouchPos.y > endTouchPos.y && triggerEnable == false)
             {
+               
+
                 rb.AddForce(0, force * Time.deltaTime, 0);
+                
                 rb.useGravity = true;
                 gameStart = true;
             }
@@ -50,6 +55,7 @@ public class BallControl : MonoBehaviour
                rb.useGravity = false;
             }
 
+
         }
         
     }
@@ -63,10 +69,7 @@ public class BallControl : MonoBehaviour
 
     public void OnTriggerExit(Collider other)
     {
-        Debug.Log("Safe");
         triggerEnable = false;
     }
-
-
 
 }
