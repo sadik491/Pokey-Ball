@@ -8,9 +8,12 @@ public class BallControl : MonoBehaviour
     public Vector2 startTouchPos;
     public Vector2 endTouchPos;
 
+    public bool triggerEnable;
+
     void Start()
     {
         gameStart = false;
+        triggerEnable = false;
     }
 
     void Update()
@@ -41,12 +44,29 @@ public class BallControl : MonoBehaviour
             //Debug.Log(dis.ToString());
 
 
-            if (touch.phase == TouchPhase.Stationary && gameStart == true)
+            if (touch.phase == TouchPhase.Stationary && gameStart == true && triggerEnable == false)
             {
-                rb.velocity = new Vector3(0, 0, 0);
-                rb.useGravity = false;
+               rb.velocity = new Vector3(0, 0, 0);
+               rb.useGravity = false;
             }
 
         }
+        
     }
+
+    public void OnTriggerEnter(Collider other)
+    {
+        rb.useGravity = true;
+        triggerEnable = true;
+        
+    }
+
+    public void OnTriggerExit(Collider other)
+    {
+        Debug.Log("Safe");
+        triggerEnable = false;
+    }
+
+
+
 }
