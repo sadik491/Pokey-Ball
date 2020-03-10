@@ -37,7 +37,7 @@ public class UiManager : MonoBehaviour
     public void nextLvl()
     {
         lvlClear.SetActive(true);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        Invoke("lvlLoadtym", 1f);
     }
 
 
@@ -46,7 +46,10 @@ public class UiManager : MonoBehaviour
         gameOver.SetActive(true);
         ballControl.enabled = false;
         score.SetActive(false);
+    }
 
-
+    public void lvlLoadtym()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

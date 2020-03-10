@@ -958,19 +958,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 59390409, guid: e786fe20e3c903141a35636439ed4066, type: 3}
-      propertyPath: force
-      value: 2500
-      objectReference: {fileID: 0}
     - target: {fileID: 1759492304332512582, guid: e786fe20e3c903141a35636439ed4066,
         type: 3}
       propertyPath: m_Name
       value: Ball
-      objectReference: {fileID: 0}
-    - target: {fileID: 2830841693873684982, guid: e786fe20e3c903141a35636439ed4066,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4521016883454892222, guid: e786fe20e3c903141a35636439ed4066,
         type: 3}

@@ -1040,7 +1040,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 59390409, guid: e786fe20e3c903141a35636439ed4066, type: 3}
       propertyPath: force
-      value: 2000
+      value: 4500
       objectReference: {fileID: 0}
     - target: {fileID: 1759492304332512582, guid: e786fe20e3c903141a35636439ed4066,
         type: 3}
